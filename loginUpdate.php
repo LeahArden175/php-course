@@ -1,13 +1,10 @@
-<?php include "db.php";
+<?php 
+    include "db.php";
+    include "functions.php";
 
-    $query = "SELECT * FROM users";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result) {
-        die('query failed');
+    if(isset($_POST['submit'])){
+        updateData();
     }
-
 ?>
 
 
@@ -24,7 +21,7 @@
 <body>
     <div class="container">
         <div class="col-xs-6">
-        <form action="post" method="post">
+        <form action="loginUpdate.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" name="username" class="form-control">
@@ -38,12 +35,7 @@
                 <select name="id" id="">
 
                 <?php
-                
-                    while($row = mysqli_fetch_assoc($result)) {
-                        $id = $row['id'];
-                        echo "<option value='$id'>$id</option>";
-                    }
-                
+                    getAllData();
                 ?>
                 <!-- <option value="">1</option>
                 <option value="">2</option> -->
