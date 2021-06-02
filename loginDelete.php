@@ -1,21 +1,15 @@
 <?php 
     include "db.php";
     include "functions.php";
+    include "includes/header.php";
 
-    if(isset($_POST['submit'])){
-        updateData();
-    }
+    deleteData();
 ?>
 
-
-
-<?php
-include "includes/header.php";
-?>
     <div class="container">
         <div class="col-xs-6">
-        <h1 class="text-center">Update</h1>
-        <form action="loginUpdate.php" method="post">
+        <h1 class="text-center">Delete</h1>
+        <form action="loginDelete.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" name="username" class="form-control">
@@ -35,10 +29,9 @@ include "includes/header.php";
                 <option value="">2</option> -->
                 </select>
             </div>
-            <input class="btn btn-primary" type="submit" name="submit" value="Update">
+            <input class="btn btn-primary" type="submit" name="submit" value="delete">
         </form>
         </div>
-    
 <?php
-include "includes/footer.php";
+include "includes/footer.php"
 ?>
