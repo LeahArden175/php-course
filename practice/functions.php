@@ -13,7 +13,7 @@ function submitData() {
         if(!$result) {
             die("query failed");
         } else {
-            echo "data has been submitted";
+            echo "data has been submitted!";
         }
     }
 }
