@@ -2,6 +2,11 @@
 
 <?php
 
+$name = "Somename";
+$value = 15;
+$expiration = time() + (60*60*24*7);// seconds * minutes * hours * days THIS COMES OUT TO A WEEK
+
+setcookie($name, $value, $expiration);//prebuilt function in php that takes 3 params
 
 ?>
 
