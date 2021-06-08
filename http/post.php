@@ -1,3 +1,11 @@
+<?php
+
+echo $_POST['name'];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +14,11 @@
     <title>Document</title>
 </head>
 <body>
+
+<form action="post.php" method="post">
+    <input type="text" name="name">
+    <button type="submit">Submit</button>
+</form>
     
 </body>
 </html>
