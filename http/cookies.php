@@ -19,6 +19,18 @@ setcookie($name, $value, $expiration);//prebuilt function in php that takes 3 pa
     <title>Document</title>
 </head>
 <body>
+
+<?php
+
+if(isset($_COOKIE["Somename"])) {
+    $user = $_COOKIE["Somename"];
+
+    echo $user;
+} else {
+    $user = "";
+}
+
+?>
     
 </body>
 </html>
