@@ -7,8 +7,17 @@ function createUser() {
         global $connection;
         $username = $_POST['username'];
         $password = $_POST['password'];
+
+        $sanitizedUsername = mysqli_real_escape_string($connection, $username);
+        $sanitizedPassword = mysqli_real_escape_string($connection, $password);
+
+        $hashFormat = "$2y$10$";
+        $salt = "iusesomecrazystrings22";
+        $hashF_and_salt = $hashFormat . $salt;
+
+        $encryptedPassword = crypt($sanitizedPassword, $hashF_and_salt);
     
-        $query = "INSERT INTO users(username, password) VALUES ('$username','$password')";
+        $query = "INSERT INTO users(username, password) VALUES ('$sanitizedUsername','$encryptedPassword')";
     
         $result = mysqli_query($connection, $query);
     
