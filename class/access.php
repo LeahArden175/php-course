@@ -4,10 +4,10 @@
 
 class Car{  //classes MUST be capitalized!
 
-    var $wheels = 4;
-    var $hood = 1;
-    var $engine = 1;
-    var $doors = 2;
+    public $wheels = 4; //available to whole program
+    protected $hood = 1; //available to this class or sub-class
+    private $engine = 1; //available to this class only. NOT ANY SUBCLASS
+    static $doors = 2; // attached to the class and NOT the instance CANNOT do $bmw->doors; must do Car::$doors
 
 
     function move() {
@@ -19,15 +19,6 @@ class Car{  //classes MUST be capitalized!
     }
 
 } 
-
-// class Plane extends Car {
-
-
-// }
-
-// $jet = new Plane();
-
-// echo $jet->wheels;
 
 $bmw = new Car();
 
